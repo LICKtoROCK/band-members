@@ -3,7 +3,11 @@
     <b-row>
       <b-col>
         <b-navbar>
-          <band-modal class="ml-auto"></band-modal>
+          <band-modal
+            class="ml-auto"
+            @add-band="onAddBand"
+          >
+          </band-modal>
         </b-navbar>
       </b-col>
     </b-row>
@@ -26,6 +30,11 @@ export default {
     BNavbar,
     BRow,
     BandModal,
+  },
+  methods: {
+    onAddBand(band) {
+      this.$emit('add-band', band);
+    },
   },
 };
 </script>

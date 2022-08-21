@@ -247,6 +247,13 @@ export default {
       if (!response) return;
       this.toDefault();
 
+      const {
+        id, name, prefectures, members, pr,
+      } = response.data;
+      this.$emit('add-band', {
+        id, name, prefectures, members, pr,
+      });
+
       this.hideModal();
       this.name = '';
       this.prefectures = null;
